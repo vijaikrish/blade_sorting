@@ -1,0 +1,191 @@
+{
+  "provenance": "Parent-engineer stdlib-only calculation; generated without importing any application module. Reachable cases solve the 2x2 eccentricity system for a known target permutation, then enumerate every permutation.",
+  "cases": [
+    {
+      "n": 4,
+      "masses_g": [
+        99.1,
+        101.2,
+        100.4,
+        98.8
+      ],
+      "diameter_mm": 500.0,
+      "thickness_mm": 50.0,
+      "density_kg_m3": 7850.0,
+      "cg_radius_mm": 300.0,
+      "runout_mm": [
+        0.009318314221431083,
+        0.003019955026213696,
+        -0.005047452865602878,
+        -0.01015813132418823,
+        -0.009318314221431083,
+        -0.0030199550262136974,
+        0.005047452865602877,
+        0.01015813132418823
+      ],
+      "disk_mass_g": 77067.19478337462,
+      "ex_mm": 0.009318314221431083,
+      "ey_mm": -0.0050474528656028785,
+      "known_reachable_permutation": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "exact_enumerated_permutations": 24,
+      "exact_minimum_gmm": 3.2574800529560895e-12,
+      "exact_minimum_permutation": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "exact_net_ux_gmm": 2.8421709430404007e-12,
+      "exact_net_uy_gmm": -1.5916157281026244e-12
+    },
+    {
+      "n": 5,
+      "masses_g": [
+        99.1,
+        101.2,
+        100.4,
+        98.8,
+        102.1
+      ],
+      "diameter_mm": 500.0,
+      "thickness_mm": 50.0,
+      "density_kg_m3": 7850.0,
+      "cg_radius_mm": 300.0,
+      "runout_mm": [
+        -0.0006077587565814575,
+        0.0016432458285890045,
+        0.0029316592936850417,
+        0.0025027465047975104,
+        0.0006077587565814579,
+        -0.001643245828589004,
+        -0.0029316592936850417,
+        -0.002502746504797511
+      ],
+      "disk_mass_g": 77067.19478337462,
+      "ex_mm": -0.0006077587565814575,
+      "ey_mm": 0.0029316592936850417,
+      "known_reachable_permutation": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "exact_enumerated_permutations": 120,
+      "exact_minimum_gmm": 8.66125947358128e-12,
+      "exact_minimum_permutation": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "exact_net_ux_gmm": -1.9397816686250735e-12,
+      "exact_net_uy_gmm": 8.44124770082999e-12
+    },
+    {
+      "n": 6,
+      "masses_g": [
+        99.1,
+        101.2,
+        100.4,
+        98.8,
+        102.1,
+        99.6
+      ],
+      "diameter_mm": 500.0,
+      "thickness_mm": 50.0,
+      "density_kg_m3": 7850.0,
+      "cg_radius_mm": 300.0,
+      "runout_mm": [
+        0.0007755803838185548,
+        -0.0008763076517566686,
+        -0.002014866549744155,
+        -0.0019731439492633993,
+        -0.0007755803838185551,
+        0.0008763076517566684,
+        0.002014866549744155,
+        0.0019731439492633998
+      ],
+      "disk_mass_g": 77067.19478337462,
+      "ex_mm": 0.0007755803838185548,
+      "ey_mm": -0.002014866549744155,
+      "known_reachable_permutation": [
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "exact_enumerated_permutations": 720,
+      "exact_minimum_gmm": 1.0957895988769644e-11,
+      "exact_minimum_permutation": [
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "exact_net_ux_gmm": -6.437517185986508e-12,
+      "exact_net_uy_gmm": 8.86757334228605e-12
+    },
+    {
+      "n": 7,
+      "masses_g": [
+        99.1,
+        101.2,
+        100.4,
+        98.8,
+        102.1,
+        99.6,
+        100.7
+      ],
+      "diameter_mm": 500.0,
+      "thickness_mm": 50.0,
+      "density_kg_m3": 7850.0,
+      "cg_radius_mm": 300.0,
+      "runout_mm": [
+        0.00048084742205939184,
+        -0.001233149164462844,
+        -0.002224783694871796,
+        -0.0019131701101713756,
+        -0.0004808474220593921,
+        0.0012331491644628437,
+        0.002224783694871796,
+        0.0019131701101713758
+      ],
+      "disk_mass_g": 77067.19478337462,
+      "ex_mm": 0.00048084742205939184,
+      "ey_mm": -0.002224783694871796,
+      "known_reachable_permutation": [
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "exact_enumerated_permutations": 5040,
+      "exact_minimum_gmm": 1.1010764741318781e-11,
+      "exact_minimum_permutation": [
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "exact_net_ux_gmm": 9.102052445086883e-12,
+      "exact_net_uy_gmm": -6.195932655828074e-12
+    }
+  ]
+}

@@ -1,38 +1,37 @@
-# This is a sample Python script.
+"""Blade sorting desktop application."""
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-import pygad
-import numpy
-import random
-
-function_inputs = [4, -2, 3.5, 5, 6]
-ran_old = [0, 1, 2, 3, 4]
-ran_new = []
-desired_output = 44
+from __future__ import annotations
+import argparse
+import sys
+from PySide6.QtWidgets import QApplication
+from data_io import sample_blades
+from gui import MainWindow
 
 
-def fitness_func(solution, solution_idx):
-    output = numpy.sum(solution * function_inputs)
-    fitness = 1.0 / (numpy.abs(output - desired_output) + 0.000001)
-    return fitness
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--demo", action="store_true", help="load a deterministic combined-mode sample (does not optimize)"
+    )
+    parser.add_argument("--screenshot", metavar="PATH", help="save a QWidget.grab() screenshot and exit")
+    args = parser.parse_args(argv)
+    app = QApplication.instance() or QApplication(sys.argv[:1])
+    window = MainWindow()
+    if args.demo:
+        window.mode_combo.setCurrentIndex(1)
+        window.set_blades(sample_blades(32))
+        for field, value in zip(window.runout_inputs, (0.12, 0.08, -0.02, -0.09, -0.12, -0.08, 0.02, 0.09)):
+            field.setValue(value)
+        window.status_label.setText("Synthetic demonstration data · not measured rotor/blade data.")
+    window.show()
+    if args.screenshot:
+        app.processEvents()
+        if not window.grab().save(args.screenshot):
+            raise OSError(f"Could not save screenshot to {args.screenshot}")
+        window.close()
+        return 0
+    return app.exec()
 
 
-def population(n):
-    for i in range(0, n):
-        ran_new = random.sample(ran_old, len(function_inputs))
-    return ran_new
-
-
-ga_instance = pygad.GA(num_generations=100,
-                       sol_per_pop=population(1),
-                       num_genes=5,
-                       num_parents_mating=5,
-                       fitness_func=fitness_func,
-                       mutation_type="random")
-
-ga_instance.run()
-ga_instance.plot_result()
-print(ga_instance.best_solution())
+if __name__ == "__main__":
+    raise SystemExit(main())
